@@ -1,8 +1,0 @@
-<launch>
-	<include file="$(find turtlebot_gazebo)/launch/turtlebot_empty_world.launch" />
-
-	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find circle_planner)/launch/rviz_config.rviz" />
-
-	<node name="drive_circle_server" pkg="drive_circle" type="drive_circle_server" />
-	
-</launch>

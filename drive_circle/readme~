@@ -1,9 +1,0 @@
-Einstiegsaufgabe von 	Keplinger Thomas 0855860
-			Stöger Matthias 0757245
-			Reiter Andreas 0855890
-
-Launchfile starten:
-roslaunch drive_circle drive_circle_server.launch
-
-Zum Aufrufen des Services zum Fahren im Kreis:
-rosrun drive_circle drive_circle_client <radius> <velocity>
