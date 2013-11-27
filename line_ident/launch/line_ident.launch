@@ -1,0 +1,19 @@
+<launch>
+
+	<include file="$(find turtlebot_gazebo)/launch/turtlebot_empty_world.launch" />
+
+	<node pkg="line_ident" name="line_ident" type="line_ident">
+		<!-- threshold value for canny algorithm -->
+		<param name="th_canny" value="100" />
+		<!-- threshold value for hough transform -->
+		<param name="th_hough" value="150" />
+		<!-- for debugging: show debug messages -->
+		<param name="debug_msg" value="false" />
+		<!-- publish images with bg image or only lines on black bg -->
+		<param name="lines_only" value="true" />
+	</node>
+	
+	<node pkg="rviz" type="rviz" name="rviz" 
+		args="-d $(find line_ident)/launch/line_ident_rviz.rviz"/>
+
+</launch>
