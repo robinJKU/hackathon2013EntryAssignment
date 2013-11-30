@@ -1,0 +1,18 @@
+<launch>
+	<!-- Start a Gazebo world -->
+  	<include file="$(find gazebo_ros)/launch/shapes_world.launch">
+  	</include>
+
+
+	<!-- Start a fake robot with fake odometry, because the gazebo simulator got no plugin yet -->
+	<include file="$(find wheeled_robin_bringup)/launch/minimal_fake.launch">
+  	</include>
+
+
+	<!-- Spawn a robot into Gazebo -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-x 2 -y 0 -R 0 -R 0 -Y 3.14 -param robot_description -urdf -model wheeled_robin" />
+
+	<include file="$(find wheeled_robin_rviz_launchers)/launch/view_robot.launch">
+  	</include>
+
+</launch>
