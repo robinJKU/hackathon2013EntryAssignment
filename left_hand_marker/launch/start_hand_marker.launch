@@ -1,0 +1,13 @@
+<launch>
+
+  <node pkg="left_hand_marker" type="left_hand_marker" name="listener" />
+
+  <include file="$(find openni_launch)/launch/openni.launch" />
+
+  <node name="openni_tracker" pkg="openni_tracker" type="openni_tracker" args="-d $(find openni_tracker)/openni_tracker.xml" />
+        
+  <node pkg="tf" type="static_transform_publisher" name="kinect_base_link5" args="0 0 0 0 1.57 0 /map /openni_depth_frame 100"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find left_hand_marker)/launch/kinect.rviz" />
+       
+</launch>
