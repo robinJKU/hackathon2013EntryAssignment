@@ -1,0 +1,11 @@
+<library path="lib/libImageConverter">
+
+  <class name="nodelet_color_filter/ImageConverter"
+	 type="nodelet_color_filter::ImageConverter"
+	 base_class_type="nodelet::Nodelet">
+    <description>
+      Nodelet
+    </description>
+  </class>
+
+</library>
