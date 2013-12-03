@@ -1,0 +1,18 @@
+<launch>   
+
+ <node name="soundplay_node" pkg="sound_play" type="soundplay_node.py"/>
+
+<node pkg="turtlesim" name="turtlesim" type="turtlesim_node">
+    </node>
+
+<node pkg="turtlesim" name="teleop_key" type="turtle_teleop_key">
+    </node>
+
+    <node pkg="back_beep_pkg" name="list" type="listener" output="screen">
+    <remap from="chatter" to="turtle1/cmd_vel"/>
+    </node>
+
+</launch>
+
+
+
