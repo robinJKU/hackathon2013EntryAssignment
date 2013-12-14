@@ -1,0 +1,11 @@
+<launch>
+	<!-- id of the source and target frame  -->
+	<arg name="source_frame_id" value="camera_depth_optical_frame"/>
+	<arg name="target_frame_id" value="target_frame"/>
+
+	<node pkg="nodelet" type="nodelet" name="standalone_nodelet"  args="manager" output="screen"/>
+
+	<node pkg="tf" type="static_transform_publisher" name="target_broadcaster" args="1 0 0 0 0 0 $(arg source_frame_id) $(arg target_frame_id) 100" />
+	<node pkg="nodelet" type="nodelet" name="PC2TransformerNodelet" args="load point_cloud_transformer/PC2TransformerNodelet standalone_nodelet" output="screen">
+	</node>  
+</launch>
