@@ -1,10 +1,12 @@
 <launch>
+	<include file="$(find turtlebot_gazebo)/launch/turtlebot_empty_world.launch" />
+
 	<!-- id of the source and target frame  -->
 	<arg name="source_frame_id" value="camera_depth_optical_frame"/>
 	<arg name="target_frame_id" value="target_frame"/>
 
 	<node pkg="tf" type="static_transform_publisher" name="target_broadcaster" args="1 0 1 0.52 0 0.52 $(arg source_frame_id) $(arg target_frame_id) 100" />
-  <node pkg="point_cloud_transformer_test" type="point_cloud_trans" name="PC2_transformer" 
+	<node pkg="point_cloud_transformer_test" type="point_cloud_trans" name="PC2_transformer" 
              args="$(arg target_frame_id)"/>
 	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find point_cloud_transformer_test)/launch/RVIZ_rob.rviz"/>
 </launch>

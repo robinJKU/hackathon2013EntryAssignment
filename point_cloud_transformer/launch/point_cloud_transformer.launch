@@ -1,4 +1,6 @@
 <launch>
+	<include file="$(find turtlebot_gazebo)/launch/turtlebot_empty_world.launch" />
+
 	<!-- id of the source and target frame  -->
 	<arg name="source_frame_id" value="camera_depth_optical_frame"/>
 	<arg name="target_frame_id" value="target_frame"/>
