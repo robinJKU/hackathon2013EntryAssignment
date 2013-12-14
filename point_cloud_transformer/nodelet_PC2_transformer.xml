@@ -1,0 +1,7 @@
+<library path="lib/libPC2TransformerNodelet">
+  <class name="point_cloud_transformer/PC2TransformerNodelet" type="point_cloud_transformer::PC2TransformerNodelet" base_class_type="nodelet::Nodelet">
+    <description>
+      A node for transforming a PointCloud2
+    </description>
+  </class>
+</library>
